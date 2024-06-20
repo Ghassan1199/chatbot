@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: neutral path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_neutral
+  - action: utter_ask_more
+  - intent: inform
+  - action: utter_acknowledge
+  - action: utter_goodbye
+
+- story: excited path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_excited
+  - action: utter_excited_response
+  - action: utter_ask_to_share
+  - intent: inform
+  - action: utter_thank_for_sharing
+  - action: utter_goodbye
